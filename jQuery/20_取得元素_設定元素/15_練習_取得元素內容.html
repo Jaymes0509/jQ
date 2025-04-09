@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <script src="../_js/jquery-3.7.1.js"></script>
+</head>
+
+<body>
+
+    <h3 id="t--">Hello</h3>
+
+    <span id="a+b">1</span>
+    <span id="a-b">2</span>
+    <span id="a*b">3</span>
+    <span id="a/b">4</span>
+
+    <script>
+
+        // 10. 挑選 h3 元素，並且將抓取裡面的內容 
+        //      目標：取得 Hello 文字
+        let js = document.getElementById("t--").innerText;
+        let jq = $('#t--').text();
+        console.log(js); // Hello
+        console.log(jq); // Hello
+
+        // 20. 透過 JavaScript 的方式抓取內容
+        //      目標：取得 1 ~ 4
+        let js1 = document.getElementById("a+b").innerText;
+        let js2 = document.getElementById("a-b").innerText;
+        let js3 = document.getElementById("a*b").innerText;
+        let js4 = document.getElementById("a/b").innerText;
+        console.log(js1); // 1
+        console.log(js2); // 2
+        console.log(js3); // 3
+        console.log(js4); // 4
+
+        // 30. 透過 jQuery 的方式抓取內容
+        //      目標：取得 1 ~ 4
+        console.log('-----我是分隔線-----'); 
+        let jq1 = $('#a+b').text(); // +
+        let jq2 = $('#a-b').text(); //
+        let jq3 = $('#a*b').text(); // *
+        let jq4 = $('#a/b').text(); // /
+        console.log(jq1); // 1
+        console.log(jq2); // 2
+        console.log(jq3); // 3
+        console.log(jq4); // 4
+    </script>
+
+</body>
+
+</html>

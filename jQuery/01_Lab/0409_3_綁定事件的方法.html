@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <pre> 目標: 按鈕點擊後, 主控台出現皮卡丘字串</pre>
+    <button onclick="console.log('皮卡丘A')"> 按鈕A </button>
+    <button onclick="bee()"> 按鈕B </button>
+    <button id="btnC"> 按鈕C </button>
+    <button id="btnD"> 按鈕D </button>
+
+    <script>
+        // 方法B
+        function bee() {
+            console.log('皮卡丘B');
+        }
+        
+        // 方法C
+        function cat(){
+            console.log('皮卡貓');
+        }
+        // 跟 btnC 說 發生 click 事情的時候 "才" 去執行 cat 
+        btnC.addEventListener('click', cat);
+        
+        // document.getElementById('btnC')
+        // .addEventListener('click', function() {
+        //     console.log('皮卡丘C');
+        // });
+
+        // 方法D + 變化 => 2個 
+        function dog() {
+            console.log('皮卡狗');
+        }
+        btnD.onclick = dog; 
+        // document.getElementById('btnD').onclick = function() {
+        //     console.log('皮卡丘D');
+        // }
+
+        
+
+    </script>
+
+
+<!-- 
+    <script>
+         const buttonC = document.querySelector('button:nth-of-type(3)');
+        buttonC.addEventListener('click', () => {
+            console.log('皮卡丘');
+        });
+    </script> -->
+</body>
+</html>

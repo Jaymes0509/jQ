@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+</head>
+<body>
+    <pre>
+        Q: return 
+        A: 回傳  |  傳回
+    </pre>
+    <p>v5: 如何獲得 apple函式回傳的「皮卡丘」字串？</p>
+    <p>請找到底下備註「這裡該怎麼做?」的那一行程式碼；限制只能修改該行程式碼</p>
+    <script>
+        function apple(){
+            return [{
+                name:"皮卡丘"
+            }]
+        }
+        var temp = apple() // 這裡該怎麼做?
+        console.log( temp[0] ); // [{name:""}]
+
+        var xa = apple()
+        console.log( xa ); // [{...}] 
+
+        var xb = xa[0];
+        console.log( xb ); // {name:"皮卡丘"}
+
+        var xc = xb.name;
+        console.log( xc ); // 皮卡丘
+
+        var xd = apple()[0].name;
+        console.log( xd ); // 皮卡丘
+
+
+
+    </script>
+</body>
+</html>

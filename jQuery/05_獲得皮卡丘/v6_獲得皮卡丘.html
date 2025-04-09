@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+</head>
+<body>
+    <p>v6: 該如何在 console (主控台) 顯示「皮卡丘」字串？</p>
+    <p>請找到底下備註「這裡該怎麼做?」的那一行程式碼；限制只能修改該行程式碼</p>
+    <script>
+        function apple(cat){
+            var result = cat(); // () -> 函式 
+            console.log(result);
+        }
+        // 參數|引數 -> (x)
+        // 回傳 -> 因為寫在等號的右邊 
+
+        
+        apple( function(){ return "皮卡丘v6"} ); // 這裡該怎麼做?
+
+        apple( () => { return "皮卡丘v62" } );
+
+        apple( () => "皮卡丘v63" );
+    </script>
+</body>
+</html>

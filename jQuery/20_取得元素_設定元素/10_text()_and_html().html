@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <script src="../_js/jquery-3.7.1.js"></script>
+</head>
+
+<body>
+    <pre>
+        宣告變數 x 設定 數字5
+        把 數字5 給到 變數x
+        let x = 5; 
+    </pre>
+
+    <p id="pika">電腦</p>
+    <button id="btnLogin">登入</button>
+
+    <script>
+
+        btnLogin.onclick = function () {
+            
+            // 10. 取得 p 元素的內容
+            // let xa = document.getElementById("pika").innerText;
+            // console.log(xa);
+
+            // 20. 設定 p 元素的內容
+            // documet.getElementById("pika").innerText = '協力旺';
+
+            // 30. 比較 $().text() 和 $().html() 的差異
+            // $().text() -> string | number | boolean
+            // $().html() -> htmlString 
+            
+
+
+            // let xb = $('#pika').text();
+            // console.log(xb); 
+            // $('#pika').text('耿鬼'); 
+
+            let xb = $('#pika').html();
+            console.log(xb); 
+            $('#pika').html('<i>耿鬼</i>');
+        }
+    </script>
+
+</body>
+
+</html>
