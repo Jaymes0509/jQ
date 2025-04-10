@@ -11,12 +11,61 @@
 
     <h4>Category: DOM Removal</h4>
     <p><a href='https://api.jquery.com/category/manipulation/dom-removal/'>https://api.jquery.com/category/manipulation/dom-removal/</a></p>
+    <button id="btnA" > 討論A </button>
+    <button id="btnB" > 討論B </button>
+    <button id="btnC"> 討論C-remove </button>
+    <button id="btnD"> 討論D-detach </button>
+    <button id="pika"> 討論D-unwrap </button>
+    <div>
+        <button id="btnE">數碼寶貝</button>
+    </div>
 
+    <button id="xa">麥克風</button>
+
+    
     <script>
         // 10. 試著比較出 empty() 和 remove() 的差異
+        // empty: 清除元素內容
+        // remove: 刪除元素本身
+        function funcA() {
+            //console.log('AAA');
+            $('#xa').empty();
+        }
+        function funcB() {
+            //console.log('BBB');
+            $('#xa').remove();
+        }
+        btnA.addEventListener('click', funcA);
+        btnB.addEventListener('click', funcB);
 
         // 20. 試著比較出 detach() 和 remove() 的差異
         //      * jQuery 綁定事件的方法之一: $().on('事件名稱', function(){})
+        // 亞古獸
+        $('#btnE').on('click', function(){
+            console.log('亞古獸');
+        })
+
+        // JS 綁定事件
+        btnC.onclick = function(){
+            // 找到 #btnE 然後存到變數
+            let temp = $('#btnE');
+
+            // 把 #btnE remove()
+            $('#btnE').remove();
+
+            // 指定 div 增加 變數
+            $('div').append(temp);
+        }
+        btnD.onclick = function(){
+            let temp = $('#btnE');
+            // 把 #btnE detach()
+            $('#btnE').detach();
+            // 指定 div 增加 變數
+            $('div').append(temp);
+
+        pika.onclick = function(){
+           $('#btnE').unwrap();
+        }
     </script>
 
 </body>

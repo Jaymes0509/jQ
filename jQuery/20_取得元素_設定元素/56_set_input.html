@@ -45,18 +45,37 @@
     <input type="checkbox" name="vehicle" value="other"> <label>其他</label><br><br>
 
     <script>
-
+        // 當 DOM 準備好的時候, 就會執行這段程式碼
         $(function () {
 
             // 10. 練習設定初始值
             btnSet.onclick = function () {
+                // *補 姓名
+                $('#userName').prop('value', '皮卡丘');
+
 
                 // 20. 將地址預設為台中
+                $('#address').prop('value', 'Taichung');
 
-                // 30. 將職業預設為其他
+                // 30. 將  職業  預設為  其他 (Javascript)
+                // 1. 我想要取得 "全部" 跟職業有關的 input
+                // 2. 一個一個確認 值是不是 其他(other)
+                // 3. 如果是其他的話，想要把 input 設定 checked 
+               let xa = document.getElementsByName('job');
+            //    console.log(  xa[0].value );
+            //    console.log(  xa[1].value );
+            //    console.log(  xa[2].value );
+                // for(let p = 0; p<=2; p++){
+                //     // console.log(  xa[p].value  );
+                //     if (  xa[p].value == 'other'  ){
+                //         xa[p].checked = true;
+                // }
 
-                // 40. 將交通工具預設為機車
+                $('input[job][other]').prop('checked', true); 
             }
+
+        
+        // 40. 將交通工具預設為機車
         })
 
     </script>

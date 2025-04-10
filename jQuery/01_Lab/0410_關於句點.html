@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <pre>
+        . (句點) 右側 屬性
+        -> 屬性存在(大小寫需一致) -> 屬性值更新
+        -> 屬性存在(大小寫不一致) -> 增加屬性
+        -> 屬性不存在            -> 增加屬性
+
+    </pre>
+    <script>
+        let pika = {
+            name:'皮卡丘'
+        }
+        pika.name = '超夢';
+
+        console.log(pika); // { name: '皮卡丘', Name: '超夢' }
+    </script>
+</body>
+</html>

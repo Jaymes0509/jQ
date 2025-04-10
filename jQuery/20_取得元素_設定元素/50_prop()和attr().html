@@ -7,13 +7,13 @@
 </head>
 
 <body>
-   
+
 
     <label for="userName">文字輸入方框:</label>
-    <input id="userName" type="text"><br><br>
-    <button id="btnDemo">測試 $().prop() 和 $().attr() </button>
+    <input id="userName" type="text" value=" 閃電鳥"><br><br>
+    <button id="btnDemo" onclick="apple()">測試 $().prop() 和 $().attr() </button>
     <hr>
-    
+
     <div>
         <h4>測試區域:</h4>
         <p> 測試 prop ===><span id="testProp"> </span></p>
@@ -21,6 +21,20 @@
     </div>
 
     <script>
+        function apple() {
+            // console.log('ok');\
+            // document.getElementById('testProp').innerText = '電腦';
+            // document.getElementById('testAttr').innerText = '手機'; 
+            let xa = $('#userName').prop('value');
+            console.log('A------------------');
+
+            console.log(xa);
+
+            let xb = $('#userName').attr('value');
+            console.log('B------------------');
+            console.log(xb); 
+        }
+
         // 10. 透過 JavaScript 的方式將字串放入 #testProp,  #testAttr
         // 20. 點選按鈕後，透過 $().prop() 和 $().attr() 等兩種方法取得 #userName 的值
     </script>
@@ -28,3 +42,7 @@
 </body>
 
 </html>
+<!-- prop v.s  attr -->
+<!-- 相同: 根據 屬性名稱 取得 屬性值 -->
+<!-- 不同: 以 input 來說 prop 會取得 最新|當前|現在 使用者的輸入 
+                        attr 會取得  一開始就放在元素開始標籤的屬性值 -->

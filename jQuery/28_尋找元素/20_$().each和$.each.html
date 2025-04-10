@@ -27,8 +27,15 @@
         $(function () {
 
             // 20. $().each(): 逐項取得所有 h3 元素 裡面的文字
-
             // 21. 將所有 h3 元素的文字改為斜體
+            $('h3').each(function (index, element) {
+                let x1 = element.innerHTML; // js
+                let x2 = element.innerText; // js
+                let x3 = $(element).text(); // jQuery
+                let x4 = $(element).html(); // jQuery
+                console.log(x4);
+                
+            }) 
 
             // 30. $.each(): 讀出陣列裡面的項目
             var list = ['dog', 'egg'];

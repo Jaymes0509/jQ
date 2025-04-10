@@ -12,7 +12,7 @@
     <hr>
     <div>
         <h4>底下是清單</h4>
-        <ol>
+        <ol id="apple">
             <li>迷客夏</li>
             <li>50嵐</li>
             <li>可不可熟成紅茶</li>
@@ -26,10 +26,16 @@
           // 10. 測試 + 比較底下幾種方法的差異:
           //    $().before()
           //    $().after()
+          $('#apple').before('<b>皮卡丘</b>');
+          $('#apple').after('<b>超夢</b>');
+          
           //    $().prepend() 
           //    $().append()
+          $('#apple').prepend('<li>蜜蜂</li>');
+        //   $('#apple').append('<li>小智</li>');
           //------------------------
           //    $().appendTo()
+          $('<li>小智</li>').appendTo('#apple')
             
         }
     </script>
