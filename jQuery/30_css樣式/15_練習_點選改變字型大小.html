@@ -19,8 +19,13 @@
         $(document).ready(function () {
 
             // 10. 在body裡面加一顆按鈕，名稱叫做放大 
+            $("body").prepend('<button id="apple">放大</button>');
 
             // 20. 按鈕點選一次，文字大小增加2px， 慢慢放大
+            $('#apple').on('click', function () {
+                // console.log('成功');
+                $('p').css('font-size', '+=2')
+            });
             
         });
     </script>

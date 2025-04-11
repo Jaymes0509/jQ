@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <pre>
+        this 關鍵字代表什麼 取決於你在哪裡使用它
+        -> 事件: (有可能 e.g. onclick) 發生事情的元素
+        -> 物件的箭頭函式: window 物件 {}
+        -> 物件的非箭頭 (一般) 函式: 物件本身
+    </pre>
+    
+    <button onclick="apple( this )">測試A</button>
+    <button onclick="apple( this )">測試B</button>
+    <button onclick="apple( this )">測試C</button>
+
+    <script>
+       
+    //    console.log(  this  ); // window {} 物件    
+    
+        function apple( xa ) {
+            console.log( xa );  // 誰發生事情就是誰
+        }
+
+        let pika = {
+            name: '巨大化皮卡丘',
+            sayHi: function() {
+                console.log( this.name + '打招呼' ); 
+                console.log( this ); // 這裡的 this 是 pika 物件 // {name: '巨大化皮卡丘', sayHi: ƒ}
+            },
+            eat: () => {
+                console.log( pika.name + '吃東西' );
+                console.log( this ); //  箭頭函式裡的this是 window 物件 {}
+            }
+        }
+        pika.sayHi(); // 打招呼
+        pika.eat(); // 吃東西
+    </script>
+</body>
+</html>

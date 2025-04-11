@@ -9,7 +9,12 @@
 
 <body>
     
-    <button id="btnPickItem">挑選</button>
+    <button id="btnFilter"> filter </button>
+    <button id="btnFind"> find </button>
+    <button id="btnChildren"> children </button>
+    <button id="btnParent"> parent </button>
+    <button id="btnClosest"> closest </button>
+
     <hr>
     
     <div id="tw">
@@ -40,11 +45,54 @@
       
         // * 比較底下幾種 尋找|篩選 元素的方式 *
 
-        // 10. filter   ===> $().filter()
-        // 11. find     ===> $().find()
-        // 12. children ===> $().children()
-        // 13. parent   ===> $().parent()
-        // 14. closest  ===> $().closest()
+        // 10. filter   ===> $().filter() -> 過濾 -> 本人不包含子元素
+        btnFilter.onclick = function() {
+            //   console.log('測試btnFilter');
+            $('li').filter('.grape').each(function(){
+                // 1. 我想要元素內容 (有8種方法) -> 巨峰葡萄 
+                // console.log(  this.innerText );
+
+                // 2. 然後把內容顯示到畫面上 #demo (有6種方法)
+                $('#demo').text(this.innerText);
+                
+            })
+            
+        }
+
+        // 11. find     ===> $().find()  -> 尋找 -> 子孫
+        btnFind.onclick = function() {
+          $('li').find('.grape').each(function(){
+            // 1. 我想要元素內容 (有8種方法)
+            // 2. 然後把內容顯示到畫面上 #demo (有6種方法)
+            console.log(this);
+            $('#demo').text(this.innerText);
+          })
+        }
+
+        // 12. children ===> $(父).children()  -> 只有找到孩子, 沒有孫子
+        btnChildren.onclick = function() {
+            //console.log('children');
+            $('#twList').children('li').each(function(){
+                console.log(this.innerText);
+                $('#demo').append('<p>' + this.innerText + '</p>');
+            })
+        }
+
+        // 13. parent   ===> $(子).parent()  -> 只有找得到父母, 沒有祖父母
+        btnParent.onclick = function() {
+            // console.log('parent');
+            $('.grape').parent('ul').each(function(){
+               console.log(this);
+            })
+        }
+
+        // 14. closest  ===> $().closest()  -> 向上|往外 尋找 -> 孫子可以找得到祖父母
+        btnClosest.onclick = function() {
+            // console.log('closest');
+            $('.grape').closest('ul').each(function(){
+                console.log(this);
+            })
+        }
 
     </script>
 

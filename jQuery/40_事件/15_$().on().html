@@ -9,11 +9,19 @@
 <body>
    
     <h3>Hello!</h3>
+    <h3>Hello!</h3>
+    <h3>Hello!</h3>
+    <h3>Hello!</h3>
+    <h3>Hello!</h3>
+    <h3>Hello!</h3>
     
     <script>
         
         // 10. 透過 $().on() 掛載 click 事件到 h3
         //   * click 後改變 h3 的內容
+        $('h3').on('click', function(){
+            $(this).text('皮卡丘')
+        })
         
     </script>
 

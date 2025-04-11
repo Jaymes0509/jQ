@@ -5,15 +5,49 @@
     <meta charset="UTF-8">
     <script src="../_js/jquery-3.7.1.js"></script>
     <!-- 10. 參考結果設定對應 css -->
+     <style>
+        div {
+            display: inline-block;
+            /* float: left; */
+        }
+        p {
+            visibility: hidden;
+            /* visibility: visible; 這是一組 */
+
+            /* display: none;
+            /* display: block; 這是一組 */
+        }
+     </style>
 </head>
 
 <body>
     <!-- 20. 設定 div ， 裡面裝一張圖片和一段文字 -->
-
+    <div>
+        <img src="../_image/dog.png" id="dog">
+        <p>狗狗</p>
+    </div>
+    <div>
+        <img src="../_image/deer.png" id="deer">
+        <p>鹿</p>
+    </div>
+    <div>
+        <img src="../_image/fish.png" id="fish">
+        <p>魚</p>
+    </div>
     <script>
         $(function () {
             // 30. 參考執行結果，條列所需的 樣式以及事件
-        });
+            $('div').on('mouseenter', function () {
+                console.log('進入div的領域');
+            })
+
+            $('div').on('mouseleave', function () {
+                console.log('離開div的領域');
+            })
+
+
+        })
+    
     </script>
 </body>
 

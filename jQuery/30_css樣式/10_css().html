@@ -8,7 +8,7 @@
 
 <body>
 
-    <h4>.css()</h4>
+    <h4 id="pika123">.css()</h4>
     <p><a href='https://api.jquery.com/css/'>https://api.jquery.com/css/</a></p>
 
     <hr>
@@ -24,15 +24,91 @@
             
             // 10. 取得 #p1 標籤的文字顏色
             // 20. 設定 #p1 標籤的文字顏色
-           
+        //    let xa = $('#p1').css('color');
+        //    console.log( xa );               // rgb(0, 0, 0)
+        //    $('#p1').css('color', 'red');  // 可以用顏色英文名稱設定
+
             // 30. 取得 h4 標籤的 id 
             // 40. 設定 h4 標籤的 id 
             //      * 和 $().css() 無關，複習 + 討論先前曾使用過的 function
+            // let xb = $('h4').prop('id');
+            // let xc = $('h4').attr('id');
+            // console.log( xb );               // pika123
+            // console.log( xc );               // pika123
+
+            // 上課討論用, 實際上id不能重複, 這樣會把全部的h4標籤都給上id值為chu456
+            // let xd = $('h4').prop('id', 'chu456'); // 可以用 prop() 設定 id
 
             // 50. $().css() 其他型態的參數
             //  * 15_練習_點選改變字型大小.html 練習後回來補充說明
+            $('#p2').prop('style', 'color: blue; font-size: 30px'); // 可以用 prop() 設定 style 
             
+            // (x) 以下分成兩行寫會失敗, 因為後面的設定會覆蓋前面的設定 (後蓋前)
+            // $('#p2').prop('style', 'color: blue')
+            // $('#p2').prop('style', 'font-size: 30px')
+
+            // 討論: 透過 css 函式設定 css 樣式
+            $('#p3').css('color', 'red');
+            $('#p3').css('font-size', '30px'); 
+
+            // An object of property-value pairs to set
+            $('#p4').css(  {
+                'color': 'green',
+                'font-size': '30px'
+            }  );
+
+            $('#p5').css(  {
+                'color': 'green',
+                'font-size': '30px'
+            }  );
+
+            // 討論: 取得很多 css 的屬性值
+            let temp = $('#p1').css(['color', 'font-size']);
+            
+            console.log( temp );   // {color: "rgb(255, 0, 0)", font-size: "30px"}
+
+            console.log( temp.color );   // rgb(255, 0, 0)
+
+            // 壞掉
+            // console.log( temp.font-size );   // undefined
+
+            // 成功
+            console.log( temp['font-size'] );   
+
+
+            // 討論: css 傳入函式
+            $('p').css('background-color', function(xa, xb){
+                // 如果索引值是 0 2 4 的話, 設定為藍色
+                // if ( xa==0 || xa==2 || xa==4 ){
+                //     return 'blue'
+                // } else {
+                //     return 'pink'
+                // }
+                
+                // 透過取餘數簡化: xa % 2 == 0
+
+
+                // 如果不是, 設定為 粉紅色
+
+                // JS 允許: 一個函式可以寫多次 return
+                // 書|老師|老闆: 一個函式只能寫一次 return
+                let temp;
+                if (  xa % 2 == 0  ){
+                    temp = 'blue'
+                } else {
+                    temp = 'pink'
+                }
+                return temp;
+                
+               
+            });
         })
+
+
+            
+
+            
+        
     </script>
 
 </body>

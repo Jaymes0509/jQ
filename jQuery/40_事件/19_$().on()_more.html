@@ -13,10 +13,51 @@
     <p><a href='https://api.jquery.com/event.data/'>https://api.jquery.com/event.data/</a></p>
 
     <pre>
-        練習製作代辦項目清單
-        1. 使用者可以增加代辦項目
-        2. 使用者點選代辦項目文字表示該項目已完成 (添加刪除線)
+        練習製作待辦項目清單
+        1. 使用者可以增加待辦項目
+        2. 使用者點選待辦項目文字表示該項目已完成 (添加刪除線)
     </pre>
+    <input type="text" id="item">
+    <button onclick="addList()">加入項目</button>
+
+
+    <h3>測試A</h3>
+    <ul id="first">
+        <li>買牛奶A</li>
+        <li>買餅乾A</li>
+    </ul>
+    <hr>
+    <h3>測試B</h3>
+    <ul id="second">
+        <li>買牛奶B</li>
+        <li>買餅乾B</li>
+    </ul>
+
+    <script>
+        // 增加 清單
+        function addList(){
+            // 取得 input
+           let temp =  $('#item').prop('value');
+           console.log( temp );
+
+           //　新增到　＃first 跟 #second
+              $('#first, #second').append(`<li>${temp}</li>`);
+        }
+
+        // 新增的li *無法* 綁定事件 -> 如果畫面 *不會* 新增元素, 可以用這個
+        $('#first>li').on('click', function(){
+            $(this).css('text-decoration','line-through')
+        })
+
+        // 新增的li *可以* 綁定事件 -> 如果畫面 *會* 新增元素, 必須用這個
+        $('#second').on('click', 'li', function(){
+            $(this).css('text-decoration','line-through')
+        })
+        
+
+
+                
+    </script>
 
 </body>
 </html>
