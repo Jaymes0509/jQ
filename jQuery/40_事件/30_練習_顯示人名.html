@@ -23,26 +23,29 @@
 <body>
     <!-- 20. 設定 div ， 裡面裝一張圖片和一段文字 -->
     <div>
-        <img src="../_image/dog.png" id="dog">
+        <img src="../_image/dog.png">
         <p>狗狗</p>
     </div>
     <div>
-        <img src="../_image/deer.png" id="deer">
+        <img src="../_image/deer.png">
         <p>鹿</p>
     </div>
     <div>
-        <img src="../_image/fish.png" id="fish">
+        <img src="../_image/fish.png">
         <p>魚</p>
     </div>
     <script>
         $(function () {
             // 30. 參考執行結果，條列所需的 樣式以及事件
             $('div').on('mouseenter', function () {
-                console.log('進入div的領域');
+                // console.log('進入div的領域');
+                $(this).find('p').css('visibility','visible')
             })
 
             $('div').on('mouseleave', function () {
-                console.log('離開div的領域');
+                // console.log('離開div的領域');
+                $(this).find('p').css('visibility','hidden')
+
             })
 
 
